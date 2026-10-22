@@ -1,4 +1,4 @@
-# Un pequeño universo para Salomé
+#Para Salomé
 
 ## Abrir la página
 
