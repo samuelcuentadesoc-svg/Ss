@@ -144,21 +144,23 @@ const CONFIG = {
     texto: "Gracias por llegar, por ser exactamente quien eres y por dejarme quererte. Si alguna vez dudas de lo importante que eres para mí, vuelve a estas palabras: mi vida es más bonita porque tú estás en ella. Te amo demasiado, amor de mi alma."
   },
 
+
   galeria: [
     {
-      src: "WhatsApp Image 2026-10-22 at 3.00.46 PM (1).jpeg",
+      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM ...jpeg",
       tipo: "luna",
       pie: "Tu mirada enciende todo mi cielo."
     },
     {
-      src: "img/WhatsApp Image 2026-10-22 at 3.00.46 PM (1).jpeg",
+      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM ...jpeg",
       tipo: "estrellas",
       pie: "Si existe el destino, escribió tu nombre en el mío."
     },
     {
-      src: "img/WhatsApp Image 2026-10-22 at 3.00.46 PM (2).jpeg",
+      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM ...jpeg",
       tipo: "estrellas",
       pie: "Te elegiría en cada vida, en cada noche, en cada amanecer."
     }
   ]
+
 };
