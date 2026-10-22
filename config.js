@@ -157,7 +157,7 @@ const CONFIG = {
       pie: "Si existe el destino, escribió tu nombre en el mío."
     },
     {
-      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM ...jpeg",
+      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM (2).jpeg",
       tipo: "estrellas",
       pie: "Te elegiría en cada vida, en cada noche, en cada amanecer."
     }
