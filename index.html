@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="ambient ambient--one" aria-hidden="true"></div>
+  <div class="ambient ambient--two" aria-hidden="true"></div>
+
+  <svg class="flower-assets" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="orchid-petal" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#fff0ff"/>
+        <stop offset=".42" stop-color="#f3a9ff"/>
+        <stop offset="1" stop-color="#a987f6"/>
+      </linearGradient>
+      <linearGradient id="orchid-lip" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#ffd6f5"/>
+        <stop offset=".52" stop-color="#f08fda"/>
+        <stop offset="1" stop-color="#956dec"/>
+      </linearGradient>
+      <symbol id="orchid-art" viewBox="0 0 120 130">
+        <g fill="url(#orchid-petal)" stroke="#ffe6ff" stroke-linejoin="round" stroke-width="1.5">
+          <path d="M60 66 C43 56 41 30 60 10 C79 30 77 56 60 66Z"/>
+          <path d="M56 65 C37 54 20 61 12 79 C32 84 49 79 60 69Z"/>
+          <path d="M64 65 C83 54 100 61 108 79 C88 84 71 79 60 69Z"/>
+          <path d="M55 66 C38 49 22 38 18 51 C23 67 37 75 57 74Z" opacity=".9"/>
+          <path d="M65 66 C82 49 98 38 102 51 C97 67 83 75 63 74Z" opacity=".9"/>
+        </g>
+        <path d="M60 57 C48 54 42 66 47 79 C50 88 60 98 60 98 C60 98 70 88 73 79 C78 66 72 54 60 57Z" fill="url(#orchid-lip)" stroke="#ffe6ff" stroke-width="1.5"/>
+        <path d="M55 72 C58 67 62 67 65 72 L62 82 L58 82Z" fill="#fff1b7"/>
+        <circle cx="60" cy="68" r="3.4" fill="#fff7dc"/>
+        <path d="M60 98 C58 108 62 116 60 128" fill="none" stroke="#74dfc5" stroke-linecap="round" stroke-width="2.5"/>
+        <path d="M60 111 C46 99 37 104 58 119Z" fill="#65d5b4" stroke="#a3ffe2" stroke-width="1"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="flower-transition" id="flower-transition" aria-hidden="true" hidden>
+    <svg class="transition-lily transition-lily--left" viewBox="0 0 120 150" role="presentation">
+      <defs>
+        <linearGradient id="lily-blue" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#e4e0ff"/>
+          <stop offset=".48" stop-color="#8ee7ff"/>
+          <stop offset="1" stop-color="#8678ef"/>
+        </linearGradient>
+      </defs>
+      <g class="lily-petals">
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(60 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(120 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(180 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(240 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(300 60 70)"/>
+      </g>
+      <circle class="lily-center" cx="60" cy="70" r="5"/>
+      <path class="lily-stem" d="M60 73 C58 102 62 123 59 149"/>
+      <path class="lily-leaf" d="M60 111 C36 91 25 101 57 120Z"/>
+      <path class="lily-leaf lily-leaf--second" d="M60 128 C78 108 91 116 62 137Z"/>
+      <g class="lily-stamens"><path d="M60 70 60 49"/><path d="M60 70 43 55"/><path d="M60 70 77 55"/><circle cx="60" cy="48" r="2.2"/><circle cx="42" cy="54" r="2.2"/><circle cx="78" cy="54" r="2.2"/></g>
+    </svg>
+    <svg class="transition-lily transition-lily--center" viewBox="0 0 120 150" role="presentation">
+      <defs>
+        <linearGradient id="lily-lavender" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#f0e8ff"/>
+          <stop offset=".48" stop-color="#c3a8ff"/>
+          <stop offset="1" stop-color="#7e82ed"/>
+        </linearGradient>
+      </defs>
+      <g class="lily-petals">
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(60 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(120 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(180 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(240 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(300 60 70)"/>
+      </g>
+      <circle class="lily-center" cx="60" cy="70" r="5"/>
+      <path class="lily-stem" d="M60 73 C58 102 62 123 59 149"/>
+      <path class="lily-leaf" d="M60 111 C36 91 25 101 57 120Z"/>
+      <path class="lily-leaf lily-leaf--second" d="M60 128 C78 108 91 116 62 137Z"/>
+      <g class="lily-stamens"><path d="M60 70 60 49"/><path d="M60 70 43 55"/><path d="M60 70 77 55"/><circle cx="60" cy="48" r="2.2"/><circle cx="42" cy="54" r="2.2"/><circle cx="78" cy="54" r="2.2"/></g>
+    </svg>
+    <svg class="transition-lily transition-lily--right" viewBox="0 0 120 150" role="presentation">
+      <defs>
+        <linearGradient id="lily-sky" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#e5fdff"/>
+          <stop offset=".48" stop-color="#79dfff"/>
+          <stop offset="1" stop-color="#648de9"/>
+        </linearGradient>
+      </defs>
+      <g class="lily-petals">
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(60 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(120 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(180 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(240 60 70)"/>
+        <path d="M60 70 C43 57 36 27 60 7 C84 28 77 57 60 70Z" transform="rotate(300 60 70)"/>
+      </g>
+      <circle class="lily-center" cx="60" cy="70" r="5"/>
+      <path class="lily-stem" d="M60 73 C58 102 62 123 59 149"/>
+      <path class="lily-leaf" d="M60 111 C36 91 25 101 57 120Z"/>
+      <path class="lily-leaf lily-leaf--second" d="M60 128 C78 108 91 116 62 137Z"/>
+      <g class="lily-stamens"><path d="M60 70 60 49"/><path d="M60 70 43 55"/><path d="M60 70 77 55"/><circle cx="60" cy="48" r="2.2"/><circle cx="42" cy="54" r="2.2"/><circle cx="78" cy="54" r="2.2"/></g>
+    </svg>
+    <svg class="transition-orchid transition-orchid--upper-left" viewBox="0 0 120 130" role="presentation"><use href="#orchid-art" width="100%" height="100%"/></svg>
+    <svg class="transition-orchid transition-orchid--upper-right" viewBox="0 0 120 130" role="presentation"><use href="#orchid-art" width="100%" height="100%"/></svg>
+    <svg class="transition-orchid transition-orchid--lower-left" viewBox="0 0 120 130" role="presentation"><use href="#orchid-art" width="100%" height="100%"/></svg>
+    <svg class="transition-orchid transition-orchid--lower-right" viewBox="0 0 120 130" role="presentation"><use href="#orchid-art" width="100%" height="100%"/></svg>
+    <span class="transition-spark transition-spark--one">✦</span>
+    <span class="transition-spark transition-spark--two">✧</span>
+    <span class="transition-spark transition-spark--three">✦</span>
+    <span class="transition-spark transition-spark--four">✧</span>
+    <span class="transition-spark transition-spark--five">✧</span>
+    <span class="transition-spark transition-spark--six">✦</span>
+    <span class="transition-spark transition-spark--seven">✧</span>
+    <span class="transition-spark transition-spark--eight">✦</span>
+  </div>
+
+  <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+    <p class="eyebrow"><span class="sparkle" aria-hidden="true">✦</span><span data-copy="bienvenidaEtiqueta"></span></p>
+    <div class="welcome__emblem" aria-hidden="true"><span id="welcome-initial"></span><i>✦</i></div>
+    <h1 id="welcome-title"></h1>
+    <p class="welcome__text" id="welcome-text"></p>
+    <button class="button button--primary" id="open-btn" type="button"></button>
+    <span class="welcome__foot" data-copy="bienvenidaPie"></span>
+  </section>
+
+  <main id="main" hidden>
+    <nav class="nav" aria-label="" data-copy-aria="ariaNavegacion">
+      <a class="nav__brand" href="#inicio" aria-label="" data-copy-aria="ariaMarca"><span id="brand-initial"></span><span aria-hidden="true">✦</span></a>
+      <button class="nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-copy="navMenu"></button>
+      <div class="nav__links" id="nav-links">
+        <a href="#inicio" data-copy="navInicio"></a>
+        <a href="#historia" data-copy="navHistoria"></a>
+        <a href="#carta" data-copy="navCarta"></a>
+        <a href="#razones" data-copy="navMensajes"></a>
+        <a href="#recuerdos" data-copy="navRecuerdos"></a>
+        <a href="#sorpresa" data-copy="navSorpresa"></a>
+      </div>
+      <button class="nav__back" id="back-btn" type="button" data-copy="navPortada"></button>
+    </nav>
+
+    <header class="hero section" id="inicio" data-view="inicio">
+      <p class="eyebrow"><span class="sparkle" aria-hidden="true">✦</span><span data-copy="heroEtiqueta"></span></p>
+      <h2 tabindex="-1"><span id="hero-name"></span><span class="hero__comma">,</span><br><em data-copy="heroFrase"></em></h2>
+      <p class="hero__intro" data-copy="heroTexto"></p>
+      <a class="scroll-cue" href="#contador"><span data-copy="bajar"></span> <span aria-hidden="true">↓</span></a>
+    </header>
+
+    <section class="section counter-section" id="contador" data-view="inicio" aria-labelledby="counter-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-copy="contadorEtiqueta"></p>
+        <h2 id="counter-title" tabindex="-1"><span data-copy="contadorTitulo"></span> <em data-copy="contadorAcento"></em></h2>
+        <p class="section-copy" id="since-note"></p>
+      </div>
+      <div class="counter" role="timer" aria-label="" data-copy-aria="ariaContador">
+        <div class="counter__unit"><b id="c-months">0</b><span data-unit="0"></span></div>
+        <div class="counter__unit"><b id="c-days">0</b><span data-unit="1"></span></div>
+        <div class="counter__unit"><b id="c-hours">0</b><span data-unit="2"></span></div>
+        <div class="counter__unit"><b id="c-minutes">0</b><span data-unit="3"></span></div>
+        <div class="counter__unit"><b id="c-seconds">0</b><span data-unit="4"></span></div>
+      </div>
+      <p class="counter__caption" data-copy="contadorNota"></p>
+      <p class="monthly" id="monthly"></p>
+    </section>
+
+    <section class="section view-panel" id="historia" data-view="historia" aria-labelledby="story-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow" data-copy="historiaEtiqueta"></p>
+        <h2 id="story-title" tabindex="-1"><span data-copy="historiaTitulo"></span> <em data-copy="historiaAcento"></em></h2>
+        <p class="section-copy" data-copy="historiaIntro"></p>
+      </div>
+      <ol class="timeline" id="timeline"></ol>
+      <details class="add-memory">
+        <summary data-copy="recuerdosSummary"></summary>
+        <form id="add-form" class="add-form">
+          <label><span data-copy="fechaLabel"></span><input id="memory-date" data-placeholder="fechaPlaceholder" required></label>
+          <label><span data-copy="tituloRecuerdoLabel"></span><input id="memory-title" data-placeholder="tituloRecuerdoPlaceholder" required></label>
+          <label><span data-copy="textoRecuerdoLabel"></span><textarea id="memory-text" rows="2" data-placeholder="textoRecuerdoPlaceholder"></textarea></label>
+          <button class="button button--small" type="submit" data-copy="guardarRecuerdo"></button>
+          <p class="form-note" data-copy="notaRecuerdos"></p>
+          <p class="memory-status" id="memory-status" role="status" aria-live="polite"></p>
+        </form>
+      </details>
+    </section>
+
+    <section class="section letter-section view-panel" id="carta" data-view="carta" aria-labelledby="letter-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow" data-copy="cartaEtiqueta"></p>
+        <h2 id="letter-title" tabindex="-1"><span data-copy="cartaHeading"></span> <em data-copy="cartaAcento"></em></h2>
+        <p class="section-copy" data-copy="cartaIntro"></p>
+      </div>
+      <button class="envelope" id="envelope-btn" type="button" aria-label="" data-copy-aria="sobreAria" aria-expanded="false" aria-controls="letter">
+        <span class="envelope__seal" id="envelope-initial" aria-hidden="true"></span>
+        <span class="envelope__label"><span data-copy="sobreEtiqueta"></span> <span id="envelope-name"></span></span>
+        <span class="envelope__hint" data-copy="sobreAyuda"></span>
+      </button>
+      <article class="letter" id="letter" hidden>
+        <p class="eyebrow" data-copy="cartaSello"></p>
+        <h3 id="letter-heading"></h3>
+        <div id="letter-body"></div>
+        <p class="letter__signature" id="letter-signature"></p>
+      </article>
+    </section>
+
+    <section class="section view-panel" id="razones" data-view="razones" aria-labelledby="reasons-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow" data-copy="mensajesEtiqueta"></p>
+        <h2 id="reasons-title" tabindex="-1"><span data-copy="mensajesHeading"></span> <em data-copy="mensajesAcento"></em></h2>
+        <p class="section-copy" data-copy="mensajesIntro"></p>
+      </div>
+      <div class="reason-box">
+        <span class="reason-box__mark" aria-hidden="true">“</span>
+        <blockquote class="reason" id="reason" aria-live="polite"></blockquote>
+        <button class="text-button" id="next-reason" type="button"><span data-copy="otroMensaje"></span> <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="cards" id="cards" aria-label="" data-copy-aria="ariaTarjetas"></div>
+      <button class="button button--outline" id="miss-btn" type="button"></button>
+      <p class="hidden-msg" id="miss-message" hidden></p>
+    </section>
+
+    <section class="section view-panel" id="recuerdos" data-view="recuerdos" aria-labelledby="gallery-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow" data-copy="galeriaEtiqueta"></p>
+        <h2 id="gallery-title" tabindex="-1"><span data-copy="galeriaHeading"></span> <em data-copy="galeriaAcento"></em></h2>
+        <p class="section-copy" data-copy="galeriaIntro"></p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="section final-section view-panel" id="sorpresa" data-view="sorpresa" aria-labelledby="surprise-heading" hidden>
+      <p class="eyebrow" data-copy="sorpresaEtiqueta"></p>
+      <h2 id="surprise-heading" tabindex="-1"><span data-copy="sorpresaHeading"></span> <em data-copy="sorpresaAcento"></em></h2>
+      <button class="button button--primary" id="final-btn" type="button"></button>
+      <div class="final-card" id="final-card" hidden>
+        <span class="final-card__star" aria-hidden="true">✦</span>
+        <h3 id="final-title" tabindex="-1"></h3>
+        <p id="final-text"></p>
+        <div class="final-card__heart" aria-hidden="true">♡</div>
+      </div>
+    </section>
+
+    <footer class="footer"><span data-copy="pie"></span> <span aria-hidden="true">✦</span> <span data-copy="piePara"></span> <span id="footer-name"></span></footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
