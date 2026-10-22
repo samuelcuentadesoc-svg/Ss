@@ -146,7 +146,7 @@ const CONFIG = {
 
   galeria: [
     {
-      src: "img/WhatsApp Image 2026-10-22 at 3.00.46 PM.jpeg",
+      src: "WhatsApp Image 2026-10-22 at 3.00.46 PM (1).jpeg",
       tipo: "luna",
       pie: "Tu mirada enciende todo mi cielo."
     },
