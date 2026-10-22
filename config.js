@@ -152,7 +152,7 @@ const CONFIG = {
       pie: "Tu mirada enciende todo mi cielo."
     },
     {
-      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM ...jpeg",
+      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM.jpeg",
       tipo: "estrellas",
       pie: "Si existe el destino, escribió tu nombre en el mío."
     },
