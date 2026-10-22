@@ -145,22 +145,22 @@ const CONFIG = {
   },
 
 
-  galeria: [
-    {
-      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM (1).jpeg",
-      tipo: "luna",
-      pie: "Tu mirada enciende todo mi cielo."
-    },
-    {
-      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM.jpeg",
-      tipo: "estrellas",
-      pie: "Si existe el destino, escribió tu nombre en el mío."
-    },
-    {
-      src: "./WhatsApp Image 2026-10-22 at 3.00.46 PM (2).jpeg",
-      tipo: "estrellas",
-      pie: "Te elegiría en cada vida, en cada noche, en cada amanecer."
-    }
-  ]
+galeria: [
+  {
+    src: "./foto-1.jpg",
+    tipo: "luna",
+    pie: "Tu mirada enciende todo mi cielo."
+  },
+  {
+    src: "./foto-2.jpg",
+    tipo: "estrellas",
+    pie: "Si existe el destino, escribió tu nombre en el mío."
+  },
+  {
+    src: "./foto-3.jpg",
+    tipo: "estrellas",
+    pie: "Te elegiría en cada vida, en cada noche, en cada amanecer."
+  }
+]
 
 };
